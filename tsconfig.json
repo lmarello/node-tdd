@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/", // directorio donde se transpilara
+        "target": "es2019",
+        "module": "CommonJS", // para poder usar import en vez de require
+        "allowJs": true
+    }
+}
