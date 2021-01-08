@@ -1,5 +1,5 @@
-function test (): number {
-  return 25
+function greet (): string {
+  return 'Hello World!'
 }
 
-test()
+greet()
