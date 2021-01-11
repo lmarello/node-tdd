@@ -4,6 +4,10 @@
         "project": "./tsconfig.json"
     },
     "rules": {
-        "@typescript-eslint/no-redeclare": "off"
+        "@typescript-eslint/no-redeclare": "off",
+        "@typescript-eslint/strict-boolean-expressions": 0
+    },
+    "env": {
+      "jest": true
     }
 }
