@@ -2,10 +2,16 @@ import { FoodModel } from '../models/food-model'
 
 describe('Intance of FoodModel', () => {
   test('should ', () => {
-    const model = new FoodModel('Hamburguesa Hood', 'Carne 180g, cheddar, panceta, huevo frito', 550)
+    const food = {
+      name: 'Hamburguesa Hood',
+      description: 'Carne 180g, cheddar, panceta, huevo frito',
+      price: 550
+    }
 
-    expect(model.getName()).toEqual('Hamburguesa Hood')
-    expect(model.getDescription()).toEqual('Carne 180g, cheddar, panceta, huevo frito')
-    expect(model.getPrice()).toEqual(550)
+    const model = new FoodModel(food)
+
+    expect(model.getName()).toEqual(food.name)
+    expect(model.getDescription()).toEqual(food.description)
+    expect(model.getPrice()).toEqual(food.price)
   })
 })
