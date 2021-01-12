@@ -1,3 +1,4 @@
+import { MissingParameter } from '../errors/client-error'
 import { HTTPRequest, HTTPResponse } from '../interfaces/http-interface'
 
 export class RegisterVehicle {
@@ -8,7 +9,7 @@ export class RegisterVehicle {
       if (!httpRequest.body[prop]) {
         return {
           statusCode: 400,
-          body: new Error(`The property "${prop}" is required`)
+          body: new MissingParameter(prop)
         }
       }
     }

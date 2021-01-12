@@ -1,4 +1,5 @@
 import { RegisterVehicle } from '../controllers/register-vehicle'
+import { MissingParameter } from '../errors/client-error'
 
 describe('Register Vehicle', () => {
   test('should expect error 400 if the name is not exists', () => {
@@ -13,7 +14,7 @@ describe('Register Vehicle', () => {
 
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('The property "name" is required'))
+    expect(httpResponse.body).toEqual(new MissingParameter('name'))
   })
 
   test('should expect error 400 if the model is not exists', () => {
@@ -28,7 +29,7 @@ describe('Register Vehicle', () => {
 
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('The property "model" is required'))
+    expect(httpResponse.body).toEqual(new MissingParameter('model'))
   })
 
   test('should expect error 400 if the year is not exists', () => {
@@ -43,7 +44,7 @@ describe('Register Vehicle', () => {
 
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('The property "year" is required'))
+    expect(httpResponse.body).toEqual(new MissingParameter('year'))
   })
 
   test('should expect status 201 when all parameters are send', () => {
