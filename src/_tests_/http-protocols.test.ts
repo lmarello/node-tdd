@@ -1,3 +1,4 @@
+import { InvalidArgs } from '../errors/invalid-args'
 import { UrlLogin } from '../protocols/http-protocols'
 
 describe('HTTP Protocols and queries', () => {
@@ -16,5 +17,12 @@ describe('HTTP Protocols and queries', () => {
 
     expect(parsedUrl.searchParams.get('param1')).toEqual(expectAuth.param1)
     expect(parsedUrl.searchParams.get('param2')).toEqual(expectAuth.param2)
+  })
+
+  test('Invalid URL', () => {
+    function expectError (): void {
+      UrlLogin.parseUrl('')
+    }
+    expect(expectError).toThrowError(new InvalidArgs('url'))
   })
 })
