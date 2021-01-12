@@ -1,3 +1,4 @@
+import { VehicleHelper } from '../helpers/vehicle-model-helper'
 import { VehicleModel } from '../models/vehicle-model'
 
 describe('Intance of VehicleModel', () => {
@@ -15,5 +16,10 @@ describe('Intance of VehicleModel', () => {
     expect(model.getModel()).toEqual(vehicle.model)
     expect(model.getYear()).toEqual(vehicle.year)
     expect(model.getPrice()).toEqual(vehicle.price)
+  })
+
+  test('Vehicle helper', () => {
+    const vehicleHelper = new VehicleHelper()
+    expect(vehicleHelper).toEqual(vehicleHelper)
   })
 })
