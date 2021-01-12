@@ -1,10 +1,19 @@
 import { VehicleModel } from '../models/vehicle-model'
+
 describe('Intance of VehicleModel', () => {
   test('should ', () => {
-    const model = new VehicleModel('Nissan', '350Z', 2020)
+    const vehicle = {
+      name: 'Peugeot',
+      model: '308',
+      year: 2021,
+      price: 2000000
+    }
 
-    expect(model.getName()).toEqual('Nissan')
-    expect(model.getModel()).toEqual('350Z')
-    expect(model.getYear()).toEqual(2020)
+    const model = new VehicleModel(vehicle)
+
+    expect(model.getName()).toEqual(vehicle.name)
+    expect(model.getModel()).toEqual(vehicle.model)
+    expect(model.getYear()).toEqual(vehicle.year)
+    expect(model.getPrice()).toEqual(vehicle.price)
   })
 })
